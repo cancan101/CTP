@@ -94,4 +94,23 @@ public class PixelScript {
 		}
 		return sb.toString();
 	}
+	
+	public String toPythonString() {
+		StringBuffer sb = new StringBuffer();
+		sb.append("[\n");
+		for (Signature sig : signatures) {
+			sb.append("{\n");
+			sb.append("'rules' :  (").append(sig.script + "),\n");
+			sb.append("'regions' : (").append(sig.regions.toPythonString() + ")\n");
+			sb.append("},\n");
+		}
+		sb.append("]\n");
+		return sb.toString();
+	}
+
+	public static void main(String[] args){
+		File inFile = new File(args[0]);
+		PixelScript ps = new PixelScript(inFile);
+		System.out.println(ps.toPythonString());
+	}
 }
