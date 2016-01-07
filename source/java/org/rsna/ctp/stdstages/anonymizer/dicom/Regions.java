@@ -49,11 +49,11 @@ public class Regions {
 		}
 		return sb.toString();
 	}
-	
+
 	public String toPythonString() {
 		StringBuffer sb = new StringBuffer();
 		for (Rectangle r : regions) {
-			sb.append("(" + r.x + "," + r.y + "," + (r.x + r.width) + "," + (r.y + r.height) + "), ");
+			sb.append("(" + r.x + "," + r.y + "," + (r.width) + "," + (r.height) + "), ");
 		}
 		return sb.toString();
 	}

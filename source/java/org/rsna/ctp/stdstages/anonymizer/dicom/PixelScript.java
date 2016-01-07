@@ -94,7 +94,7 @@ public class PixelScript {
 		}
 		return sb.toString();
 	}
-	
+
 	public String toPythonString() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("[\n");
